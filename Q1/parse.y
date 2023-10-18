@@ -2,14 +2,15 @@
   #include<stdio.h>
   #include<stdlib.h>
   #include"Node.h"
+  #include"lex.yy.c"
   void yyerror();
   void yylexval();
-  void displayAST(node *X);
+  void displayAST(Node *X);
   int flag=0;
 %}
 
 %union {
-  Node* node;
+  struct Node* Node;
   int value; 
 }
 
@@ -84,10 +85,9 @@ F: NUMBER {
  | '('E')' {
             $$ = $2;
            };
-
 %%
 
-void displayAST(node *x) {
+void displayAST(Node *x) {
    if(x!=NULL)
    {
     printf("Preorder traversal of the AST=>\n");

@@ -48,11 +48,10 @@ void preorderTraversal(Node *x) {
 }
 
 void inorderTraversal(Node *x) {
+
 	if (x != NULL) {
-		preOrderTraversal(x->left);
+		inorderTraversal(x->left);
 		traversalFn(x);
-		preOrderTraversal(x->right);
+		inorderTraversal(x->right);
 	}
 }
-
-int main(void) { return 0; }
