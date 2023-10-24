@@ -3,17 +3,17 @@
 
 typedef struct Node {
 		int isOperator;
-		int value;
+		char value;
 		struct Node *left;
 		struct Node *right;
 } Node;
 
-Node *createNode(int isOp, int val, Node *left, Node *right);
+Node *createNode(int isOp, char val, Node *left, Node *right);
 
 void traversalFn(Node *x);
 
 void inorderTraversal(Node *root);
 
-void preOrderTraversal(Node *root);
+void preorderTraversal(Node *root);
 
 #endif	// !DEBUG

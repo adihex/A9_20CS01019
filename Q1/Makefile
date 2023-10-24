@@ -1,20 +1,11 @@
 LEX=flex
 YACC=bison
 CC=gcc
-ADDITIONAL_CFLAGS=-std=C99 -O2 -Wall -D_POSIC_C_SOURCE=200809L
-BINS=
 
-all: $(BINS)
-
-$(BINS): $(CC) $(CFLAGS) $(ADDITIONAL_CFLAGS) -o $@ $^ -lfl
-
-%.c: %.l
-	$(LEX) -o $@ $($(<)_header_file) $<
-
-%.tab.c: %.y
-	$(CC) -o $@ -d $<
-
-.PHONY: clean
+run: scanner.l parser.y
+	$(YACC) -d parser.y 
+	$(LEX) scanner.l	
+	$(CC) -o $@ parser.tab.c main.c Node.c 
 
 clean: 
-	rm -rf *.c *.h $(BINS)
+	rm -rf run parser.tab.* lex.* 

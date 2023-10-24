@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Node *createNode(int isOp, int val, Node *left, Node *right) {
+Node *createNode(int isOp, char val, Node *left, Node *right) {
 	Node *newNode = (Node *)malloc(sizeof(Node));
 	newNode->isOperator = isOp;
 	newNode->value = val;
@@ -31,11 +31,11 @@ void traversalFn(Node *x) {
 				printf("%% ");
 				break;
 			default:
-				printf("invalid operator!! ");
+				printf("invalid operator!! \n");
 				break;
 		}
 	} else {
-		printf("%d", x->value);
+		printf("%c ", x->value);
 	}
 }
 

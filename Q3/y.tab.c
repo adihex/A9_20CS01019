@@ -1431,7 +1431,7 @@ void print()
         if(row[3]=='+') printf("%d. %c <- ADD(%c,%c) \n", i+1, row[0], row[1],row[2]);
         else if(row[3]=='-') printf("%d. %c <- SUB(%c,%c) \n", i+1, row[0], row[1],row[2]);
         else if(row[3]=='*') printf("%d. %c <- MUL(%c,%c) \n", i+1, row[0], row[1],row[2]);
-        else if(row[3]=='/') printf("%d. %c <- DIV(%c,%c) \n", i+1, row[0], row[1],row[2]);
+        else if(row[3]=='-') printf("%d. %c <- DIV(%c,%c) \n", i+1, row[0], row[1],row[2]);
     }
     printf("\n");
 }
